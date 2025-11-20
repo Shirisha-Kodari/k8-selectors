@@ -42,3 +42,6 @@ spec:
   containers:
   - name: pod-2
     image: nginx 
+    #pod-1 runs on schedules or selector node and pod-2 likes pod-1 so matches labels runs on same node 
+    #requeredrule means hardrule-->pod must schedules on selector node and
+    #prefer means softrule -->not guaranted pods schedules on same node ,if labels not matched scheduled another node 

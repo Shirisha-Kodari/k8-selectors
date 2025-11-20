@@ -11,12 +11,12 @@ spec:
     imagePullPolicy: Always 
   nodeSelector:
     disktype: ssd
-  tolerations:
+  tolerations: #excuse the taints pod sceduled in tainted node 
   - key: "key1"
     operator: "Equal"
     value: "value1"
-    effect: "NoExecute"
+    effect: "NoExecute" #noexcute-->remove pod in node 
   - key: "key1"
     operator: "Equal"
     value: "value1"
-    effect: "NoSchedule"
+    effect: "NoSchedule" #noschedule-->pod noscheduled in node 
