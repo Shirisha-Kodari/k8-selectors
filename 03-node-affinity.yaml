@@ -17,10 +17,14 @@ spec:
       - weight: 1
         preference:
           matchExpressions:
-          - key: another-node-label-key 
-            operator: In # matching labels
-            values:
-            - another-node-label-value
+      #     - key: another-node-label-key 
+            - key: hardware
+              operator: In # matching labels
+              values:
+      #       - another-node-label-value
+              - gpu
+
+     
   containers:
   - name: with-node-affinity
     image: nginx
