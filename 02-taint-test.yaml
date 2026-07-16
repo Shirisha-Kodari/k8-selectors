@@ -10,7 +10,8 @@ spec:
     image: nginx
     imagePullPolicy: Always 
   nodeSelector:
-    disktype: ssd
+    # disktype: ssd  
+    disk: ssd
   tolerations: #excuse the taints pod sceduled in tainted node 
   - key: "key1"
     operator: "Equal"
