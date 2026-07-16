@@ -64,6 +64,13 @@ spec:
  -> labels matche schdelues the pods 
  -> if not lebals match eventhough the pod shechdule another node 
  -> this is soft rule 
+ -> the labels if matched then schedule the pod and if not matches scheduling another node 
+
+ # node-anti-affinity :
+ * if we give operate notin then scheduling expect selected node 
+ use operator = NotIn 
+
+
 
 
 

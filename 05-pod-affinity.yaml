@@ -10,38 +10,38 @@ spec:
   - name: pod-1
     image: nginx   
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-2
-  labels:
-    app-name: pod-2
-    purpose: pod-affinity
-spec: 
-  affinity:
-    podAffinity:
-      # requiredDuringSchedulingIgnoredDuringExecution: # hard rule pod-2 scheduled in pod-1
-      # # ensure that Pods associated with this tenant land on the correct node pool
-      #   - labelSelector:
-      #       matchExpressions:      #key= app-name and vaules= pod-1
-      #       - key: app-name
-      #         operator: In
-      #         values:
-      #         - pod-1
-      #     topologyKey: "kubernetes.io/hostname"  
-      preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
-      - weight: 1
-        podAffinityTerm:
-          labelSelector:
-            matchExpressions:
-            - key: app-name
-              operator: In
-              values:
-              - pod-1
-          topologyKey: "kubernetes.io/hostname"    
-  containers:
-  - name: pod-2
-    image: nginx 
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: pod-2
+#   labels:
+#     app-name: pod-2
+#     purpose: pod-affinity
+# spec: 
+#   affinity:
+#     podAffinity:
+#       # requiredDuringSchedulingIgnoredDuringExecution: # hard rule pod-2 scheduled in pod-1
+#       # # ensure that Pods associated with this tenant land on the correct node pool
+#       #   - labelSelector:
+#       #       matchExpressions:      #key= app-name and vaules= pod-1
+#       #       - key: app-name
+#       #         operator: In
+#       #         values:
+#       #         - pod-1
+#       #     topologyKey: "kubernetes.io/hostname"  
+#       preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
+#       - weight: 1
+#         podAffinityTerm:
+#           labelSelector:
+#             matchExpressions:
+#             - key: app-name
+#               operator: In
+#               values:
+#               - pod-1
+#           topologyKey: "kubernetes.io/hostname"    
+#   containers:
+#   - name: pod-2
+#     image: nginx 
     #pod-1 runs on schedules or selector node and pod-2 likes pod-1 so matches labels runs on same node 
     #requeredrule means hardrule-->pod must schedules on selector node and
     #prefer means softrule -->not guaranted pods schedules on same node ,if labels not matched scheduled another node 
