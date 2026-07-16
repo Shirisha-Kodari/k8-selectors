@@ -78,6 +78,15 @@ spec:
  if pod-1 is running in one node 
  and pod-2 also want to run same node where pod-1 is running 
  topology key ->find the pod-1 labels and shcedule the pod-2 on the same node 
+ -> it gives guarantee 
+ ->if not match label the pod-2 is pedning 
+
+ prefersheduling:
+
+ -> labels matching or not schedule the pod to another node 
+ -> if labels match then scheduling same node where pod-1 is running 
+ -> if labels does not match then schdeuling reaimaing node availbulty node 
+ -> preferred in does not guarantee 
 
 
 
