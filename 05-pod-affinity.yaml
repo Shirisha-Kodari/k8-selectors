@@ -23,12 +23,12 @@ spec:
       # requiredDuringSchedulingIgnoredDuringExecution: # hard rule pod-2 scheduled in pod-1
       # # ensure that Pods associated with this tenant land on the correct node pool
       #   - labelSelector:
-      #       matchExpressions:
+      #       matchExpressions:      #key= app-name and vaules= pod-1
       #       - key: app-name
       #         operator: In
       #         values:
       #         - pod-1
-      #     topologyKey: "kubernetes.io/hostname"
+      #     topologyKey: "kubernetes.io/hostname"  
       preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
       - weight: 1
         podAffinityTerm:

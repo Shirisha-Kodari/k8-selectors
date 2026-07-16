@@ -20,3 +20,4 @@ spec:
     operator: "Equal"
     value: "value1"
     effect: "NoSchedule" #noschedule-->pod noscheduled in node 
+
