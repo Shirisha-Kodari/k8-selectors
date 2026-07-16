@@ -25,7 +25,7 @@ spec:
  # taints and toolerance :
 
  * kubectl taint nodes <node-name> <key>=<value>:<effect>
- ex: kubectl taint nodes ip-192-168-15-26.ec2.internal env=prod:NoSchedule
+* ex: kubectl taint nodes ip-192-168-15-26.ec2.internal env=prod:NoSchedule
      kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoSchedule 
       kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoExecute
       kubectl taint nodes ip-192-168-17-180.ec2.internal key1=value1:NoSchedule
@@ -33,11 +33,30 @@ spec:
      <key>->key1 ,<vaule>->vaule1 
      env->key 
      value->prod 
-next tainte the node using labels 
- kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoSchedule 
- ->the pod is pedning beacuse we taint that node but we select the node selector 
- Noschedule->not scheduling new pods 
- Noexcute->evicted pods 
+ * next tainte the node using labels 
+ * kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoSchedule 
+ * ->the pod is pedning beacuse we taint that node but we select the node selector 
+ * Noschedule->not scheduling new pods 
+ * Noexcute->evicted pods 
+
+ # toolerance:
+ * toolerance excuse the tainted node 
+ * we add labels whatever add to tainted node 
+   taint labels add to toolerance  
+* sometimes it not give guarantee so we use also node selecotr and toolerance out pod shloud scheduling tainted  node    
+
+# uses:
+ * some hardware for special projects 
+ * networking requiremnets 
+ * high priority applications 
+
+ # node-affinity: 
+ step-1 :
+ nodeselector 
+ add label to node key=hardware and value=gpu 
+ kubectl label nodes ip-192-168-17-180.ec2.internal hardware=gpu
+
+ 
 
 
 
