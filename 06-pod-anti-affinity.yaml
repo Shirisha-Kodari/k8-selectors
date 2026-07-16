@@ -24,7 +24,7 @@ spec:
       - labelSelector: 
           matchExpressions:
           - key: app-name
-            operator: In
+            operator: NotIn
             values:
             - pod-1
         topologyKey: "kubernetes.io/hostname"    
