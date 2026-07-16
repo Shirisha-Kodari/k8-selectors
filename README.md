@@ -89,6 +89,11 @@ spec:
  -> preferred in does not guarantee 
 
 
+# pod-antia-ffinity:
+
+use operator ->NotIn does not schdeule where pod-1 is running on same node 
+
+
 
 
 
