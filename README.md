@@ -70,6 +70,17 @@ spec:
  * if we give operate notin then scheduling expect selected node 
  use operator = NotIn 
 
+ # pod-affinity: 
+ * required schdeuling :
+
+ we define podaffinity 
+ thirugh labels 
+ if pod-1 is running in one node 
+ and pod-2 also want to run same node where pod-1 is running 
+ topology key ->find the pod-1 labels and shcedule the pod-2 on the same node 
+
+
+
 
 
 

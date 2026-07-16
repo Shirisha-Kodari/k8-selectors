@@ -27,7 +27,8 @@ spec:
             - key: app-name
               operator: In
               values:
-              - pod-1
+              # - pod-1
+              - pod-3
           topologyKey: "kubernetes.io/hostname"  
 #       preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
 #       - weight: 1
