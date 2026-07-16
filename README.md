@@ -55,8 +55,17 @@ spec:
  nodeselector 
  add label to node key=hardware and value=gpu 
  kubectl label nodes ip-192-168-17-180.ec2.internal hardware=gpu
-
  
+ * requiredschedulin:
+  -> labels should matche this hard rule 
+  -> if does not match the pod is pending 
+
+* preferredsheduling :
+ -> labels matche schdelues the pods 
+ -> if not lebals match eventhough the pod shechdule another node 
+ -> this is soft rule 
+
+
 
 
 

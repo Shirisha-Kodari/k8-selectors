@@ -11,8 +11,8 @@ spec:
           - key: hardware
             operator: In
             values:
-            - gpu 
-      #       - gpuu
+            # - gpu 
+            - gpuu
       # preferredDuringSchedulingIgnoredDuringExecution: 
       # - weight: 1
       #   preference:
