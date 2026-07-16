@@ -12,11 +12,11 @@ spec:
   nodeSelector:
     # disktype: ssd  
     disk: ssd
-  # tolerations: #excuse the taints pod sceduled in tainted node 
-  # - key: "key1"
-  #   operator: "Equal"
-  #   value: "value1"
-  #   effect: "NoExecute" #noexcute-->remove pod in node 
+  tolerations: #excuse the taints pod sceduled in tainted node 
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoExecute" #noexcute-->remove pod in node 
   # - key: "key1"
   #   operator: "Equal"
   #   value: "value1"
