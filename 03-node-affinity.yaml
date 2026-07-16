@@ -5,22 +5,22 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: hardware
-            operator: In
-            values:
-            # - gpu 
-            - gpuu
-      # preferredDuringSchedulingIgnoredDuringExecution: 
-      # - weight: 1
-      #   preference:
-      #     matchExpressions:
-      #     - key: another-node-label-key 
-      #       operator: In # matching labels
+      # requiredDuringSchedulingIgnoredDuringExecution:
+      #   nodeSelectorTerms:
+      #   - matchExpressions:
+      #     - key: hardware
+      #       operator: In
       #       values:
-      #       - another-node-label-value
+      #       # - gpu 
+      #       - gpuu
+      preferredDuringSchedulingIgnoredDuringExecution: 
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: another-node-label-key 
+            operator: In # matching labels
+            values:
+            - another-node-label-value
   containers:
   - name: with-node-affinity
     image: nginx
