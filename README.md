@@ -21,4 +21,17 @@ spec:
 
  the labels does not match the pod is pedning reamin 
 
- 
+ # taints and toolerance :
+
+ * kubectl taint nodes <node-name> <key>=<value>:<effect>
+ ex: kubectl taint nodes ip-192-168-15-26.ec2.internal env=prod:NoSchedule
+     kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoSchedule 
+
+     <key>->key1 ,<vaule>->vaule1 
+     env->key 
+     value->prod 
+next tainte the node using labels 
+ kubectl taint nodes ip-192-168-15-26.ec2.internal key1=vaule:NoSchedule 
+
+
+
