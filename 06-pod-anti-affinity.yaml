@@ -20,14 +20,25 @@ metadata:
 spec: 
   affinity:
     podAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution: # hard rule pod-2 scheduled in pod-1
-      - labelSelector: 
-          matchExpressions:
-          - key: app-name
-            operator: In
-            values:
-            - pod-1
-        topologyKey: "kubernetes.io/hostname"    
+      # requiredDuringSchedulingIgnoredDuringExecution: # hard rule pod-2 scheduled in pod-1
+      # - labelSelector: 
+      #     matchExpressions:
+      #     - key: app-name
+      #       operator: In
+      #       values:
+      #       - pod-1
+      #   topologyKey: "kubernetes.io/hostname" 
+
+        preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
+        - weight: 1
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions: 
+            - key: app-namee
+              operator: In
+              values:
+              - pod-1
+          topologyKey: "kubernetes.io/hostname"     
   containers:
   - name: pod-2
     image: nginx 
