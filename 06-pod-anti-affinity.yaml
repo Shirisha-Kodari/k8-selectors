@@ -31,14 +31,14 @@ spec:
 
         preferredDuringSchedulingIgnoredDuringExecution: # soft rule pod-2 schedule in pod-1 in preffer some not sure scheduled
         - weight: 1
-        podAffinityTerm:
-          labelSelector:
-            matchExpressions: 
-            - key: app-namee
-              operator: In
-              values:
-              - pod-1
-          topologyKey: "kubernetes.io/hostname"     
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions: 
+              - key: app-namee
+                operator: In
+                values:
+                - pod-1
+            opologyKey: "kubernetes.io/hostname"     
   containers:
   - name: pod-2
     image: nginx 
